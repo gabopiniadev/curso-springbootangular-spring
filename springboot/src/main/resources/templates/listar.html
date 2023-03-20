@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}">Titulo</title>
+</head>
+<body>
+
+    <h1 th:text="${titulo}"></h1>
+
+    <div th:if="${usuarios.size() == 0}">No hay usuarios en el sistema</div>
+  <table th:if="${!usuarios.isEmpty()}">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario: ${usuarios}">
+                <td th:text="${usuario.nombre}"></td>   
+                <td th:text="${usuario.apellido}"></td>   
+                <td th:text="${usuario.email}"></td>   
+            </tr>    
+        </tbody>
+    </table>
+</body>
+</html>
