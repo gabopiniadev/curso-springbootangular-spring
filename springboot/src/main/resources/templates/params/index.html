@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+
+    <h1 th:text="${titulo}"></h1>
+        <ul>
+            <li><a th:href="@{/params/string(texto='Hola Gabriel, probando paramentros')}">Prueba URL</a></li>
+            <li><a th:href="@{/params/string(texto='Mejorando en Spring Boot')}">Prueba URL 2</a></li>
+            <hr>
+        </ul>
+        <hr>
+    <h1 th:text="${titulo2}"></h1>
+        <ul>
+            <li><a th:href="@{/params/mix-params(saludo='Hola Gabriel, actualmente tienes: ', numero=27)}">Prueba 1</a></li>
+        </ul>
+    <h1 th:text="${titulo3}"></h1>
+        <ul>
+            <li><a th:href="@{/params/mix-params-request(saludo='Hola Gabriel, actualmente tienes: ', numero=27ER)}">Prueba 1 - Error Try Catch</a></li>
+            <li><a th:href="@{/params/mix-params-request(saludo='Hola Gabriel, actualmente tienes: ', numero=27)}">Prueba 2 - Sin Error Try Catch</a></li>
+        </ul>            
+</body>
+</html>
